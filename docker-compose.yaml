@@ -9,7 +9,7 @@ services:
         volumes:
             - ./oauth:/var/www/html/oauth
             - ./oauth.conf:/etc/nginx/conf.d/oauth.conf:ro
-            - ./etc/nginx/ssl:/etc/nginx/certs:ro
+            - ./certs:/etc/nginx/certs:ro
         depends_on:
             - php
     php:
