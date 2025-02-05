@@ -6,7 +6,7 @@ RUN set -x \
     && rm -rf /var/lib/apt/lists/* \
     && docker-php-ext-configure pgsql --with-pgsql=/usr/local/pgsql \
     && docker-php-ext-install pdo pdo_pgsql pgsql \
-    && docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu/ \
+#    && docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu/ \
     && docker-php-ext-install ldap
 
 # Enable development php.ini config (Solve empty answer from token.php)
