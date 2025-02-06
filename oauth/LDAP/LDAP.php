@@ -125,7 +125,7 @@ class LDAP implements LDAPInterface
 
         if (!$data)
         {
-            throw new Exception("No result from LDAP server for ${ldap_base_dn} and ${search_filter}", 404);
+            throw new Exception("No result from LDAP server for '${ldap_base_dn}' and '${search_filter}'", 404);
         }
         $dn = ldap_get_dn($this->ldap_server, $data);
         if (!$dn) {
