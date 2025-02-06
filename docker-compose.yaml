@@ -17,6 +17,7 @@ services:
     php:
         build: ./Docker/php-ldap-pgsql
         image: php-ldap-pgsql
+        restart: always
         volumes:
             - ./oauth:/var/www/html/oauth
         environment:
