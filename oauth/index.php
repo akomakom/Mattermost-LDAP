@@ -51,7 +51,6 @@ else
         $user=strtolower(strip_tags(htmlspecialchars(trim($_POST['user']))));
         $password=$_POST['password'];
 
-        $error = null;
         // Open a LDAP connection
         $ldap = new LDAP($ldap_host,$ldap_port,$ldap_version,$ldap_start_tls);
 
@@ -62,7 +61,6 @@ else
         catch (Exception $e)
         {
             $authenticated = false;
-            $error = $e;
         }
 
         // If user is authenticated
@@ -85,7 +83,7 @@ else
         // check login on LDAP has failed. Login and password were invalid or LDAP is unreachable
         else
         {
-            messageShow($prompt_template, "Authentication failed (${error})... Check your username and password.<br />If the error persists contact your administrator.<br /><br />");
+            messageShow($prompt_template, 'Authentication failed ... Check your username and password.<br />If the error persists contact your administrator.<br /><br />');
         }
     }
 }
