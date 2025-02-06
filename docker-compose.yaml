@@ -12,6 +12,8 @@ services:
             - ./certs:/etc/nginx/certs:ro
         depends_on:
             - php
+        extra_hosts:
+            - "host.docker.internal:host-gateway"
     php:
         build: ./Docker/php-ldap-pgsql
         image: php-ldap-pgsql
